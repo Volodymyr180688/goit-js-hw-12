@@ -1,6 +1,8 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+import { refreshLightbox } from '../main.js';
+
 export function renderImgs(images) {
   const gallery = document.querySelector('ul.gallery');
   gallery.innerHTML = '';
@@ -36,4 +38,6 @@ export function renderImgs(images) {
     .join('');
 
   gallery.insertAdjacentHTML('beforeend', imgGallery);
+
+  refreshLightbox();
 }
