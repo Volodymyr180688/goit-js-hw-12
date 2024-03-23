@@ -46,19 +46,23 @@ const handleFormSubmit = async (event) => {
   showLoader();
   try {
     const images = await fetchImg(searchQuery);
+    if (!images.hits || images.hits.length === 0) {
+      throw new Error('No images found');
+    }
     renderImgs(images);
   } catch (error) {
     iziToast.error({
       color: 'red',
       message: `❌ Sorry, there was a mistake. Please try again!`,
-      position: 'topRight',
+      position: 'topRight',      
     });
+    gallery.innerHTML = '';
   } finally {
     hideLoader();
     handleLoad();
     form.reset();
   }
-};
+}
 
 form.addEventListener('submit', handleFormSubmit);
 

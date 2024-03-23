@@ -16,5 +16,10 @@ export async function fetchImg(searchQuery) {
     throw new Error(response.status);
   }
 
-  return response.json();
+  const data = await response.json();
+  if (!data.hits || data.hits.length === 0) {
+    throw new Error('No images found');
+  }
+
+  return data;
 }
