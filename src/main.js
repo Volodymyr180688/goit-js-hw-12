@@ -16,14 +16,14 @@ const inputfield = document.querySelector('input');
 const inputBtn = document.querySelector('button');
 const fillForm = document.querySelector('form');
 
-const preloader = document.querySelector('.preloader');
+const flowerSpinner = document.querySelector('.flower-spinner');
 
 
 const showLoader = () => {
-  preloader.style.display = 'flex';
+  flowerSpinner.style.display = 'flex';
 };
 const hideLoader = () => {
-  preloader.style.display = 'none';
+  flowerSpinner.style.display = 'none';
 };
 const handleLoad = () => {
   document.body.classList.add('loaded');

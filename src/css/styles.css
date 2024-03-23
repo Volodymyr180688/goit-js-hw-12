@@ -90,137 +90,104 @@ img {
   object-fit: cover;
 }
 
-/* orbit-spiner
-.orbit-spinner, .orbit-spinner * {
+.flower-spinner,
+.flower-spinner * {
   box-sizing: border-box;
 }
 
-.orbit-spinner {
-  height: 55px;
-  width: 55px;
-  border-radius: 50%;
-  perspective: 800px;
-}
-
-.orbit-spinner .orbit {
-  position: absolute;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-
-.orbit-spinner .orbit:nth-child(1) {
-  left: 0%;
-  top: 0%;
-  animation: orbit-spinner-orbit-one-animation 1200ms linear infinite;
-  border-bottom: 3px solid #771dff;
-}
-
-.orbit-spinner .orbit:nth-child(2) {
-  right: 0%;
-  top: 0%;
-  animation: orbit-spinner-orbit-two-animation 1200ms linear infinite;
-  border-right: 3px solid #771dff;
-}
-
-.orbit-spinner .orbit:nth-child(3) {
-  right: 0%;
-  bottom: 0%;
-  animation: orbit-spinner-orbit-three-animation 1200ms linear infinite;
-  border-top: 3px solid #771dff;
-}
-
-@keyframes orbit-spinner-orbit-one-animation {
-  0% {
-    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
-  }
-}
-
-@keyframes orbit-spinner-orbit-two-animation {
-  0% {
-    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
-  }
-}
-
-@keyframes orbit-spinner-orbit-three-animation {
-  0% {
-    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
-  }
-  100% {
-    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
-  }
-} */
-
-/* spiner new */
-
-.loader {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: #e0e0e09e;
-  z-index: 1001;
-}
-
-.preloader__row {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 70px;
+.flower-spinner {
   height: 70px;
-  margin-top: -35px;
-  margin-left: -35px;
-  text-align: center;
-  animation: preloader-rotate 2s infinite linear;
+  width: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
 }
 
-.preloader__item {
-  position: absolute;
-  display: inline-block;
-  top: 0;
-  background-color: #337ab7;
-  border-radius: 100%;
-  width: 35px;
-  height: 35px;
-  animation: preloader-bounce 2s infinite ease-in-out;
+.flower-spinner .dots-container {
+  height: calc(70px / 7);
+  width: calc(70px / 7);
 }
 
-.preloader__item:last-child {
-  top: auto;
-  bottom: 0;
-  animation-delay: -1s;
+.flower-spinner .smaller-dot {
+  background: #0c10e9;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  animation: flower-spinner-smaller-dot-animation 2.5s 0s infinite both;
 }
 
-@keyframes preloader-rotate {
-  100% {
-    transform: rotate(360deg);
-  }
+.flower-spinner .bigger-dot {
+  background: #0c10e9;
+  height: 100%;
+  width: 100%;
+  padding: 10%;
+  border-radius: 50%;
+  animation: flower-spinner-bigger-dot-animation 2.5s 0s infinite both;
 }
 
-@keyframes preloader-bounce {
+@keyframes flower-spinner-bigger-dot-animation {
   0%,
   100% {
-    transform: scale(0);
+    box-shadow: rgb(3, 156, 61) 0px 0px 0px, rgb(3, 156, 61) 0px 0px 0px,
+      rgb(3, 156, 61) 0px 0px 0px, rgb(3, 156, 61) 0px 0px 0px,
+      rgb(3, 156, 61) 0px 0px 0px, rgb(3, 156, 61) 0px 0px 0px,
+      rgb(3, 156, 61) 0px 0px 0px, rgb(3, 156, 61) 0px 0px 0px;
   }
 
   50% {
-    transform: scale(1);
+    transform: rotate(180deg);
+  }
+
+  25%,
+  75% {
+    box-shadow: rgb(251, 255, 35) 26px 0px 0px, rgb(251, 255, 35) -26px 0px 0px,
+      rgb(251, 255, 35) 0px 26px 0px, rgb(251, 255, 35) 0px -26px 0px,
+      rgb(251, 255, 35) 19px -19px 0px, rgb(251, 255, 35) 19px 19px 0px,
+      rgb(251, 255, 35) -19px -19px 0px, rgb(251, 255, 35) -19px 19px 0px;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    box-shadow: rgb(251, 255, 35) 0px 0px 0px, rgb(251, 255, 35) 0px 0px 0px,
+      rgb(251, 255, 35) 0px 0px 0px, rgb(251, 255, 35) 0px 0px 0px,
+      rgb(251, 255, 35) 0px 0px 0px, rgb(251, 255, 35) 0px 0px 0px,
+      rgb(251, 255, 35) 0px 0px 0px, rgb(251, 255, 35) 0px 0px 0px;
   }
 }
 
-.loaded_hiding .preloader {
+@keyframes flower-spinner-smaller-dot-animation {
+  0%,
+  100% {
+    box-shadow: rgb(77, 255, 23) 0px 0px 0px, rgb(77, 255, 23) 0px 0px 0px,
+      rgb(77, 255, 23) 0px 0px 0px, rgb(77, 255, 23) 0px 0px 0px,
+      rgb(77, 255, 23) 0px 0px 0px, rgb(77, 255, 23) 0px 0px 0px,
+      rgb(77, 255, 23) 0px 0px 0px, rgb(77, 255, 23) 0px 0px 0px;
+  }
+
+  25%,
+  75% {
+    box-shadow: rgb(77, 255, 23) 14px 0px 0px, rgb(77, 255, 23) -14px 0px 0px,
+      rgb(77, 255, 23) 0px 14px 0px, rgb(77, 255, 23) 0px -14px 0px,
+      rgb(77, 255, 23) 10px -10px 0px, rgb(77, 255, 23) 10px 10px 0px,
+      rgb(77, 255, 23) -10px -10px 0px, rgb(77, 255, 23) -10px 10px 0px;
+  }
+
+  100% {
+    box-shadow: rgb(77, 255, 23) 0px 0px 0px, rgb(77, 255, 23) 0px 0px 0px,
+      rgb(77, 255, 23) 0px 0px 0px, rgb(77, 255, 23) 0px 0px 0px,
+      rgb(77, 255, 23) 0px 0px 0px, rgb(77, 255, 23) 0px 0px 0px,
+      rgb(77, 255, 23) 0px 0px 0px, rgb(77, 255, 23) 0px 0px 0px;
+  }
+}
+.loaded_hiding .flower-spinner {
   transition: 0.3s opacity;
   opacity: 0;
 }
 
-.loaded .preloader {
+.loaded .flower-spinner {
   display: none;
 }
