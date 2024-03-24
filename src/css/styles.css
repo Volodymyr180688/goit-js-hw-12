@@ -98,7 +98,7 @@ img {
 .flower-spinner {
   height: 70px;
   width: 70px;
-  display: flex;
+  display: none;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -190,4 +190,12 @@ img {
 
 .loaded .flower-spinner {
   display: none;
+}
+.load-more {
+  display: none;
+  margin-top: 10px;
+}
+.mini-container {
+  display: flex;
+  justify-content: center;
 }

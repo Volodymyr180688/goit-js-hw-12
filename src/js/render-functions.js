@@ -1,11 +1,16 @@
 import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
+import SimpleLightbox from 'simplelightbox';
 
-import { refreshLightbox } from '../main.js';
+import 'izitoast/dist/css/iziToast.min.css';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+});
+
+export const gallery = document.querySelector('ul.gallery');
 
 export function renderImgs(images) {
-  const gallery = document.querySelector('ul.gallery');
-  gallery.innerHTML = '';
 
   const imgGallery = images.hits
     .map(
@@ -39,5 +44,5 @@ export function renderImgs(images) {
 
   gallery.insertAdjacentHTML('beforeend', imgGallery);
 
-  refreshLightbox();
+  lightbox.refresh();
 }
