@@ -89,7 +89,7 @@ const handleLoadMore = async (event) => {
   
     iziToast.error({
       color: 'red',
-      message: `❌ Sorry, there was a mistake. Please try again!`,
+      message: `❌ Sorry a, there was a mistake. Please try again!`,
       position: 'topRight',      
     });
   } finally {
